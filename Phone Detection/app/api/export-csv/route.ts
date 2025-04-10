@@ -29,6 +29,8 @@ export async function GET(request: NextRequest) {
       headers: {
         "Content-Type": "text/csv; charset=utf-8",
         "Content-Disposition": 'attachment; filename="Device Data Collection.csv"',
+        // Ensure line endings are preserved as \r\n
+        "Content-Transfer-Encoding": "binary"
       },
     })
   } catch (error) {
